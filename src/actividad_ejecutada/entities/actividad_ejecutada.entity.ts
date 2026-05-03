@@ -1,14 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { CultivoReal } from '../cultivo_real/entities/cultivo_real.entity';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('actividad_ejecutada')
 export class ActividadEjecutada {
   @PrimaryGeneratedColumn()
   id_actividad_ejecutada: number;
-
-  @ManyToOne(() => CultivoReal)
-  @JoinColumn({ name: 'id_cultivo_real' })
-  cultivo_real: CultivoReal;
 
   @Column()
   id_cultivo_real: number;
