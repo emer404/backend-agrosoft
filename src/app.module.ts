@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ActividadEjecutadaModule } from './actividad_ejecutada/actividad_ejecutada.module';
+import { AccionCorrectivaModule } from './accion_correctiva/accion_correctiva.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ActividadEjecutadaModule } from './actividad_ejecutada/actividad_ejecut
       synchronize: true,
     }),
     ActividadEjecutadaModule,
+    AccionCorrectivaModule,
   ],
   controllers: [],
   providers: [],
