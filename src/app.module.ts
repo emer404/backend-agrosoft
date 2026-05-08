@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ActividadEjecutadaModule } from './actividad_ejecutada/actividad_ejecutada.module';
 import { VentasModule } from './ventas/ventas.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { RolModule } from './rol/rol.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { VentasModule } from './ventas/ventas.module';
     }),
     ActividadEjecutadaModule,
     VentasModule,
+    UsuarioModule,
+    RolModule,
   ],
   controllers: [],
   providers: [],

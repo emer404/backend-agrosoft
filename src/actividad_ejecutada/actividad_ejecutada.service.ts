@@ -1,26 +1,42 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { ActividadEjecutada } from './entities/actividad_ejecutada.entity';
 import { CreateActividadEjecutadaDto } from './dto/create-actividad_ejecutada.dto';
 import { UpdateActividadEjecutadaDto } from './dto/update-actividad_ejecutada.dto';
 
 @Injectable()
 export class ActividadEjecutadaService {
-  create(createActividadEjecutadaDto: CreateActividadEjecutadaDto) {
-    return 'This action adds a new actividadEjecutada';
+  constructor(
+    @InjectRepository(ActividadEjecutada)
+    private readonly actividadEjecutadaRepository: Repository<ActividadEjecutada>,
+  ) {}
+
+  create(createActividadEjecutadaDto: CreateActividadEjecutadaDto): Promise<ActividadEjecutada> {
+    const actividad = this.actividadEjecutadaRepository.create(createActividadEjecutadaDto);
+    return this.actividadEjecutadaRepository.save(actividad);
   }
 
-  findAll() {
-    return `This action returns all actividadEjecutada`;
+  findAll(): Promise<ActividadEjecutada[]> {
+    return this.actividadEjecutadaRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} actividadEjecutada`;
+  async findOne(id: number): Promise<ActividadEjecutada> {
+    const actividad = await this.actividadEjecutadaRepository.findOneBy({ id_actividad_ejecutada: id });
+    if (!actividad) {
+      throw new NotFoundException(`ActividadEjecutada con id ${id} no encontrada`);
+    }
+    return actividad;
   }
 
-  update(id: number, updateActividadEjecutadaDto: UpdateActividadEjecutadaDto) {
-    return `This action updates a #${id} actividadEjecutada`;
+  async update(id: number, updateActividadEjecutadaDto: UpdateActividadEjecutadaDto): Promise<ActividadEjecutada> {
+    const actividad = await this.findOne(id);
+    Object.assign(actividad, updateActividadEjecutadaDto);
+    return this.actividadEjecutadaRepository.save(actividad);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} actividadEjecutada`;
+  async remove(id: number): Promise<void> {
+    const actividad = await this.findOne(id);
+    await this.actividadEjecutadaRepository.remove(actividad);
   }
 }
