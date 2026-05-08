@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { Rol } from '../../rol/entities/rol.entity';
+import { ActividadEjecutada } from '../../actividad_ejecutada/entities/actividad_ejecutada.entity';
 
 @Entity('usuario')
 export class Usuario {
@@ -30,4 +31,7 @@ export class Usuario {
 
   @Column({ nullable: true })
   telefono: string;
+
+  @OneToMany(() => ActividadEjecutada, actividad => actividad.usuario)
+  actividadesEjecutadas: ActividadEjecutada[];
 }
