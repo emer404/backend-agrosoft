@@ -1,14 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { CultivoReal } from '../cultivo_real/entities/cultivo_real.entity';
+import { Usuario } from '../../usuario/entities/usuario.entity';
 
 @Entity('actividad_ejecutada')
 export class ActividadEjecutada {
   @PrimaryGeneratedColumn()
   id_actividad_ejecutada: number;
-
-  @ManyToOne(() => CultivoReal)
-  @JoinColumn({ name: 'id_cultivo_real' })
-  cultivo_real: CultivoReal;
 
   @Column()
   id_cultivo_real: number;
@@ -18,6 +14,10 @@ export class ActividadEjecutada {
 
   @Column({ type: 'date' })
   fecha_ejecucion: Date;
+
+  @ManyToOne(() => Usuario)
+  @JoinColumn({ name: 'id_usuario' })
+  usuario: Usuario;
 
   @Column()
   id_usuario: number;
