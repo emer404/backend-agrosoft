@@ -6,6 +6,7 @@ import { VentasModule } from './ventas/ventas.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { RolModule } from './rol/rol.module';
 import { CosechaModule } from './cosecha/cosecha.module';
+import { ReportesModule } from './reportes/reportes.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { CosechaModule } from './cosecha/cosecha.module';
     UsuarioModule,
     RolModule,
     CosechaModule,
+    ReportesModule,
   ],
   controllers: [],
   providers: [],
