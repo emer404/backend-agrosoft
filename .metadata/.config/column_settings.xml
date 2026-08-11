@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="NodeList/DBSDataType/SQLiteDataType">
+		<column name="Name" visible="true" order="0" width="101"/>
+		<column name="Description" visible="true" order="1" width="100"/>
+	</item>
+	<item id="NodeList/GenericSequence">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Value" visible="true" order="1" width="100"/>
+		<column name="Min Value" visible="true" order="2" width="100"/>
+		<column name="Max Value" visible="true" order="3" width="100"/>
+		<column name="Increment" visible="true" order="4" width="100"/>
+		<column name="Description" visible="true" order="5" width="100"/>
+	</item>
+	<item id="NodeList/GenericTableIndex/GenericTableIndexColumn">
+		<column name="Column" visible="true" order="0" width="127"/>
+		<column name="Index Name" visible="true" order="1" width="218"/>
+		<column name="Table" visible="true" order="2" width="100"/>
+		<column name="Index Type" visible="true" order="3" width="100"/>
+		<column name="Ascending" visible="true" order="4" width="100"/>
+		<column name="Unique" visible="true" order="5" width="100"/>
+		<column name="Cardinality" visible="true" order="6" width="100"/>
+		<column name="Qualifier" visible="true" order="7" width="100"/>
+		<column name="Index Description" visible="true" order="8" width="120"/>
+	</item>
+	<item id="NodeList/GenericTableIndexColumn">
+		<column name="Column" visible="true" order="0" width="100"/>
+		<column name="Name" visible="true" order="1" width="100"/>
+		<column name="Ascending" visible="true" order="2" width="338"/>
+	</item>
+	<item id="NodeList/GenericTableTrigger">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Table" visible="true" order="1" width="100"/>
+		<column name="Description" visible="true" order="2" width="100"/>
+	</item>
+	<item id="NodeList/GenericView">
+		<column name="Table Name" visible="true" order="0" width="100"/>
+		<column name="Table Type" visible="true" order="1" width="100"/>
+		<column name="Table Description" visible="true" order="2" width="119"/>
+	</item>
+	<item id="NodeList/SQLiteTable">
+		<column name="Table Name" visible="true" order="0" width="109"/>
+		<column name="Table Type" visible="true" order="1" width="100"/>
+		<column name="Strict typing" visible="true" order="2" width="100"/>
+		<column name="Table Description" visible="true" order="3" width="230"/>
+	</item>
+	<item id="projectExplorer">
+		<column name="Name" visible="true" order="0" width="141"/>
+		<column name="DataSource" visible="true" order="1" width="100"/>
+	</item>
+</items>

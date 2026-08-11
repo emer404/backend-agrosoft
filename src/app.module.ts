@@ -2,6 +2,12 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ActividadEjecutadaModule } from './actividad_ejecutada/actividad_ejecutada.module';
+import { AccionCorrectivaModule } from './accion_correctiva/accion_correctiva.module';
+import { SensoresModule } from './modules/sensores/sensores.module';
+import { TiposSensoresModule } from './modules/tipos_sensores/tipos-sensores.module';
+import { SensorLecturasModule } from './modules/sensor_lecturas/sensor-lecturas.module';
+import { SensorAlertasModule } from './modules/sensor_alertas/sensor-alertas.module';
+import { IotConfigModule } from './modules/iot_config/iot-config.module';
 
 @Module({
   imports: [
@@ -17,6 +23,12 @@ import { ActividadEjecutadaModule } from './actividad_ejecutada/actividad_ejecut
       synchronize: true,
     }),
     ActividadEjecutadaModule,
+    AccionCorrectivaModule,
+    SensoresModule,
+    TiposSensoresModule,
+    SensorLecturasModule,
+    SensorAlertasModule,
+    IotConfigModule,
   ],
   controllers: [],
   providers: [],

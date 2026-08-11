@@ -1,0 +1,8 @@
+node_modules
+dist
+.git
+bindmount-apps
+test
+*.md
+.eslintrc.js
+.prettierrc

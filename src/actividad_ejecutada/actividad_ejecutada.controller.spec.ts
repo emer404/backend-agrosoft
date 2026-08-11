@@ -8,10 +8,17 @@ describe('ActividadEjecutadaController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [ActividadEjecutadaController],
-      providers: [ActividadEjecutadaService],
+      providers: [
+        {
+          provide: ActividadEjecutadaService,
+          useValue: {},
+        },
+      ],
     }).compile();
 
-    controller = module.get<ActividadEjecutadaController>(ActividadEjecutadaController);
+    controller = module.get<ActividadEjecutadaController>(
+      ActividadEjecutadaController,
+    );
   });
 
   it('should be defined', () => {
